@@ -26,5 +26,9 @@ class BottomDeckViewController: DeckSectionViewController {
         sectionCopy.remove(at: 0)
         return sectionCopy
     }
+    
+    override func getSectionNum() -> Int {
+        return 1
+    }
 
 }

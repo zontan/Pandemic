@@ -297,6 +297,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8BN6DVT59H;
 				INFOPLIST_FILE = "Pandemic Deck Tracker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "zontan.Pandemic-Deck-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -310,6 +311,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8BN6DVT59H;
 				INFOPLIST_FILE = "Pandemic Deck Tracker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "zontan.Pandemic-Deck-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -336,6 +338,7 @@
 				7F7EFC311FF03C6B00E449BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

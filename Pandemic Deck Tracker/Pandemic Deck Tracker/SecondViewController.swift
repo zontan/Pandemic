@@ -23,6 +23,10 @@ class DiscardViewController: DeckSectionViewController {
         return [Deck.shared.discard]
     }
     
+    override func getSectionNum() -> Int {
+        return Deck.Section.Discard.rawValue
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

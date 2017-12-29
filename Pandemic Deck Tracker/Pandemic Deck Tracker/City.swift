@@ -8,7 +8,7 @@
 
 import Foundation
 
-class City: Hashable, Comparable {
+class City: Hashable, Comparable, Codable {
     var cityName: String
     var numCards: Int
     var supplyCubes: Int

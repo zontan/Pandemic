@@ -29,6 +29,10 @@ class DeckSectionViewController: UIViewController, UITableViewDelegate, UITableV
         return [[:]]
     }
     
+    func getSectionNum() -> Int {
+        return 0
+    }
+    
     func removeCityCard(city: City) {
         
     }
@@ -40,6 +44,39 @@ class DeckSectionViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return  getSection()[section].count
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let removeAction = UITableViewRowAction(style: .normal, title: "Remove") { (action, indexPath) in
+            let list = Deck.sortedCityList(section: self.getSection()[indexPath.section])
+            
+            let city = list[indexPath.row]
+            
+            Deck.shared.remove(card: city, from: self.getSectionNum() + indexPath.section)
+            
+            Deck.shared.add(card: city, to: Deck.Section.Removed.rawValue)
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
+        let destroyAction = UITableViewRowAction(style: .destructive, title: "Destroy") { (action, indexPath) in
+            let list = Deck.sortedCityList(section: self.getSection()[indexPath.section])
+            
+            let city = list[indexPath.row]
+            
+            Deck.shared.remove(card: city, from: self.getSectionNum() + indexPath.section)
+            
+            city.numCards -= 1
+            Deck.saveCities()
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
+        return [removeAction, destroyAction]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

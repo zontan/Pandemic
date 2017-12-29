@@ -29,17 +29,15 @@ class DeckTopViewController: DeckSectionViewController {
         return [Deck.shared.sections[0]]
     }
     
+    override func getSectionNum() -> Int {
+        return 0
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let list = Deck.sortedCityList(section: Deck.shared.sections[0])
         
         let city = list[indexPath.row]
-        let num = Deck.shared.sections[0][city]
-        
-        if num! > 1 {
-            Deck.shared.sections[0][city] = num! - 1
-        } else {
-            Deck.shared.sections[0][city] = nil
-        }
+        Deck.shared.remove(card: city, from: Deck.Section.Top.rawValue)
         
         if city.supplyCubes > 0 {
             city.supplyCubes -= 1
@@ -49,11 +47,7 @@ class DeckTopViewController: DeckSectionViewController {
             Deck.shared.sections.remove(at: 0)
         }
         
-        if let discardNum = Deck.shared.discard[city] {
-            Deck.shared.discard[city] = discardNum + 1
-        } else {
-            Deck.shared.discard[city] = 1
-        }
+        Deck.shared.add(card: city, to: Deck.Section.Discard.rawValue)
         
         tableView.reloadData()
     }
