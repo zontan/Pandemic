@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16G1114" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Deck Top-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <viewController id="9pv-A4-QxB" customClass="DeckTopViewController" customModule="Pandemic_Deck_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sj0-Ke-x88">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="c6P-eD-O51"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="2mg-eN-UhX"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AtX-xp-TZg">
+                                <rect key="frame" x="0.0" y="555" width="375" height="63"/>
+                                <color key="backgroundColor" red="0.33236607142857144" green="1" blue="0.31582031249999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="uhM-KB-AWf"/>
+                                </constraints>
+                                <state key="normal" title="Epidemic!"/>
+                                <connections>
+                                    <segue destination="h5Y-Zc-Y1J" kind="popoverPresentation" popoverAnchorView="AtX-xp-TZg" id="aq3-Bm-fzf">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sj0-Ke-x88" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="5W5-Wt-OUf"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="sj0-Ke-x88" secondAttribute="bottom" id="6uj-Kt-I0l"/>
+                            <constraint firstAttribute="trailing" secondItem="AtX-xp-TZg" secondAttribute="trailing" id="IUc-I1-wmn"/>
+                            <constraint firstItem="AtX-xp-TZg" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="Kg6-af-Tex"/>
+                            <constraint firstAttribute="trailing" secondItem="sj0-Ke-x88" secondAttribute="trailing" id="Uli-sz-1v0"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="AtX-xp-TZg" secondAttribute="bottom" id="igR-Fy-YhH"/>
+                            <constraint firstItem="sj0-Ke-x88" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="kYi-q0-sbD"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Deck Top" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="tableView" destination="sj0-Ke-x88" id="mxm-z5-4Z9"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
+        </scene>
+        <!--Discard-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+                <viewController id="8rJ-Kc-sve" customClass="DiscardViewController" customModule="Pandemic_Deck_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8j-Gp-fJC">
+                                <rect key="frame" x="0.0" y="555" width="375" height="63"/>
+                                <color key="backgroundColor" red="0.33236607140000002" green="1" blue="0.31582031249999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="qNn-uV-cmC"/>
+                                </constraints>
+                                <state key="normal" title="Epidemic!"/>
+                                <connections>
+                                    <segue destination="h5Y-Zc-Y1J" kind="popoverPresentation" popoverAnchorView="r8j-Gp-fJC" id="jZ2-Hi-FPd">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b9M-uT-OMK">
+                                <rect key="frame" x="0.0" y="20" width="375" height="535"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="RhH-zO-WrI"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="idT-b3-ae4"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="r8j-Gp-fJC" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="1D6-sa-zna"/>
+                            <constraint firstAttribute="trailing" secondItem="r8j-Gp-fJC" secondAttribute="trailing" id="3VH-WF-AEv"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="r8j-Gp-fJC" secondAttribute="bottom" id="L82-ju-K7k"/>
+                            <constraint firstItem="b9M-uT-OMK" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="QFr-lg-UMb"/>
+                            <constraint firstItem="r8j-Gp-fJC" firstAttribute="top" secondItem="b9M-uT-OMK" secondAttribute="bottom" id="eAW-uk-oQf"/>
+                            <constraint firstItem="b9M-uT-OMK" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="nix-Hl-3LW"/>
+                            <constraint firstAttribute="trailing" secondItem="b9M-uT-OMK" secondAttribute="trailing" id="xjk-E8-eQn"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Discard" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="tableView" destination="b9M-uT-OMK" id="zBq-xS-IHB"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Deck Bottom-->
+        <scene sceneID="C9w-pd-JvD">
+            <objects>
+                <viewController id="re3-hk-tsi" customClass="BottomDeckViewController" customModule="Pandemic_Deck_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rnu-BG-UWe"/>
+                        <viewControllerLayoutGuide type="bottom" id="JoM-Zt-vwW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jX3-vC-CdQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUg-80-fdf">
+                                <rect key="frame" x="0.0" y="555" width="375" height="63"/>
+                                <color key="backgroundColor" red="0.33236607140000002" green="1" blue="0.31582031249999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="q1P-oe-vfg"/>
+                                </constraints>
+                                <state key="normal" title="Epidemic!"/>
+                                <connections>
+                                    <segue destination="h5Y-Zc-Y1J" kind="popoverPresentation" popoverAnchorView="tUg-80-fdf" id="iwu-Eh-67q">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="85" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="eJb-1V-iqP">
+                                <rect key="frame" x="0.0" y="20" width="375" height="535"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="re3-hk-tsi" id="bwQ-OU-qKB"/>
+                                    <outlet property="delegate" destination="re3-hk-tsi" id="SVT-Dl-Gwh"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JoM-Zt-vwW" firstAttribute="top" secondItem="tUg-80-fdf" secondAttribute="bottom" id="5C5-ie-mGq"/>
+                            <constraint firstItem="tUg-80-fdf" firstAttribute="leading" secondItem="jX3-vC-CdQ" secondAttribute="leading" id="5I8-xJ-SCl"/>
+                            <constraint firstItem="eJb-1V-iqP" firstAttribute="top" secondItem="Rnu-BG-UWe" secondAttribute="bottom" id="9ZF-gO-oBX"/>
+                            <constraint firstItem="tUg-80-fdf" firstAttribute="top" secondItem="eJb-1V-iqP" secondAttribute="bottom" id="dQ0-QI-euH"/>
+                            <constraint firstItem="eJb-1V-iqP" firstAttribute="leading" secondItem="jX3-vC-CdQ" secondAttribute="leading" id="gZx-Ew-P7x"/>
+                            <constraint firstAttribute="trailing" secondItem="eJb-1V-iqP" secondAttribute="trailing" id="lzd-hX-d0c"/>
+                            <constraint firstAttribute="trailing" secondItem="tUg-80-fdf" secondAttribute="trailing" id="wJj-wL-Jkd"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Deck Bottom" id="OMP-1s-z3X"/>
+                    <connections>
+                        <outlet property="tableView" destination="eJb-1V-iqP" id="tB6-mM-92o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r3I-Wr-A8G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1" y="767"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="re3-hk-tsi" kind="relationship" relationship="viewControllers" id="1sh-bc-pXa"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Epidemic Alert Controller-->
+        <scene sceneID="KNl-Hs-QLU">
+            <objects>
+                <viewController id="h5Y-Zc-Y1J" customClass="EpidemicAlertController" customModule="Pandemic_Deck_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4zy-aS-T37"/>
+                        <viewControllerLayoutGuide type="bottom" id="l9W-P2-2jP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S8R-5G-afk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Infected City?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gds-TO-qMJ">
+                                <rect key="frame" x="134" y="28" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BWb-ar-Ydu">
+                                <rect key="frame" x="0.0" y="57" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="h5Y-Zc-Y1J" id="uJW-8M-Mec"/>
+                                    <outlet property="delegate" destination="h5Y-Zc-Y1J" id="ff5-rt-gRk"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHQ-V2-fgM">
+                                <rect key="frame" x="8" y="290" width="359" height="30"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="pressOK:" destination="h5Y-Zc-Y1J" eventType="touchUpInside" id="rri-mh-Q5p"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="BWb-ar-Ydu" secondAttribute="trailing" id="02B-0O-ct5"/>
+                            <constraint firstAttribute="trailing" secondItem="JHQ-V2-fgM" secondAttribute="trailing" constant="8" id="5A8-Cp-3If"/>
+                            <constraint firstItem="BWb-ar-Ydu" firstAttribute="top" secondItem="gds-TO-qMJ" secondAttribute="bottom" constant="8" id="5II-m8-fhI"/>
+                            <constraint firstItem="gds-TO-qMJ" firstAttribute="centerX" secondItem="S8R-5G-afk" secondAttribute="centerX" id="Kc0-LD-3pr"/>
+                            <constraint firstItem="BWb-ar-Ydu" firstAttribute="leading" secondItem="S8R-5G-afk" secondAttribute="leading" id="RVd-Wh-jM5"/>
+                            <constraint firstItem="JHQ-V2-fgM" firstAttribute="leading" secondItem="S8R-5G-afk" secondAttribute="leading" constant="8" id="VTw-9a-DID"/>
+                            <constraint firstItem="gds-TO-qMJ" firstAttribute="top" secondItem="4zy-aS-T37" secondAttribute="bottom" constant="28" id="k5p-no-C9Z"/>
+                            <constraint firstItem="JHQ-V2-fgM" firstAttribute="top" secondItem="BWb-ar-Ydu" secondAttribute="bottom" constant="17" id="usD-W1-2Fg"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YRC-yY-efT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1687" y="99"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="iwu-Eh-67q"/>
+    </inferredMetricsTieBreakers>
+</document>
