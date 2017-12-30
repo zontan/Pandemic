@@ -33,8 +33,10 @@ class DeckSectionViewController: UIViewController, UITableViewDelegate, UITableV
         return 0
     }
     
-    func removeCityCard(city: City) {
-        
+    
+    @IBAction func startNewGame(_ sender: Any) {
+        Deck.shared.resetDeck()
+        tableView.reloadData()
     }
     
     //Table View Functions

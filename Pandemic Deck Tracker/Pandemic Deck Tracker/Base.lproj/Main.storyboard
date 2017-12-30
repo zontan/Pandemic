@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Deck Top-->
+        <!--Deck Top View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="DeckTopViewController" customModule="Pandemic_Deck_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sj0-Ke-x88">
-                                <rect key="frame" x="0.0" y="20" width="375" height="535"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="491"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="9pv-A4-QxB" id="c6P-eD-O51"/>
@@ -53,16 +53,27 @@
                             <constraint firstItem="sj0-Ke-x88" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="kYi-q0-sbD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Deck Top" image="first" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="VgB-ot-Eah">
+                        <barButtonItem key="leftBarButtonItem" title="New Game" id="U37-3c-K2a">
+                            <connections>
+                                <action selector="startNewGame:" destination="9pv-A4-QxB" id="0uk-IU-oRE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add City" id="dMb-3j-iYD">
+                            <connections>
+                                <segue destination="Qw7-iI-eRx" kind="show" id="OFk-Yi-THX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="sj0-Ke-x88" id="mxm-z5-4Z9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
+            <point key="canvasLocation" x="1569" y="-446"/>
         </scene>
-        <!--Discard-->
+        <!--Discard View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="DiscardViewController" customModule="Pandemic_Deck_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -88,7 +99,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b9M-uT-OMK">
-                                <rect key="frame" x="0.0" y="20" width="375" height="535"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="491"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="8rJ-Kc-sve" id="RhH-zO-WrI"/>
@@ -107,16 +118,27 @@
                             <constraint firstAttribute="trailing" secondItem="b9M-uT-OMK" secondAttribute="trailing" id="xjk-E8-eQn"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Discard" image="second" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" id="P1E-nD-pUa">
+                        <barButtonItem key="leftBarButtonItem" title="New Game" id="3lM-eG-svG">
+                            <connections>
+                                <action selector="startNewGame:" destination="8rJ-Kc-sve" id="YL9-ez-NRb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add City" id="eIJ-79-m78">
+                            <connections>
+                                <segue destination="Qw7-iI-eRx" kind="show" id="PDi-ja-vsv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="b9M-uT-OMK" id="zBq-xS-IHB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="1868" y="318.89055472263868"/>
         </scene>
-        <!--Deck Bottom-->
+        <!--Bottom Deck View Controller-->
         <scene sceneID="C9w-pd-JvD">
             <objects>
                 <viewController id="re3-hk-tsi" customClass="BottomDeckViewController" customModule="Pandemic_Deck_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -142,7 +164,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="85" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="eJb-1V-iqP">
-                                <rect key="frame" x="0.0" y="20" width="375" height="535"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="491"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="re3-hk-tsi" id="bwQ-OU-qKB"/>
@@ -161,14 +183,53 @@
                             <constraint firstAttribute="trailing" secondItem="tUg-80-fdf" secondAttribute="trailing" id="wJj-wL-Jkd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Deck Bottom" id="OMP-1s-z3X"/>
+                    <navigationItem key="navigationItem" id="un4-yJ-36i">
+                        <barButtonItem key="leftBarButtonItem" title="New Game" id="AbC-Lg-KdT">
+                            <connections>
+                                <action selector="startNewGame:" destination="re3-hk-tsi" id="m1J-OW-X3v"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add City" id="oMn-0X-gWD">
+                            <connections>
+                                <segue destination="Qw7-iI-eRx" kind="show" id="QJY-ht-3dO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="eJb-1V-iqP" id="tB6-mM-92o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r3I-Wr-A8G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="767"/>
+            <point key="canvasLocation" x="628" y="1165.3673163418291"/>
+        </scene>
+        <!--Add City View Controller-->
+        <scene sceneID="obG-yH-KLb">
+            <objects>
+                <tableViewController id="Qw7-iI-eRx" customClass="AddCityViewController" customModule="Pandemic_Deck_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="E6p-X5-RvH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Mz6-zl-gN6">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mz6-zl-gN6" id="AD4-l7-uno">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Qw7-iI-eRx" id="mxu-Zz-aTd"/>
+                            <outlet property="delegate" destination="Qw7-iI-eRx" id="2Br-vP-Ap0"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="psS-b7-eVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1905" y="1189"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -181,9 +242,9 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="re3-hk-tsi" kind="relationship" relationship="viewControllers" id="1sh-bc-pXa"/>
+                        <segue destination="6I3-IJ-e7Z" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="9oe-gd-8PN" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="u9G-5R-47H" kind="relationship" relationship="viewControllers" id="1sh-bc-pXa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -241,7 +302,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRC-yY-efT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1687" y="99"/>
+            <point key="canvasLocation" x="2804" y="95.802098950524751"/>
+        </scene>
+        <!--Deck Top-->
+        <scene sceneID="bjw-qN-KEF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6I3-IJ-e7Z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Deck Top" image="first" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kgt-y1-RMT">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="tN5-X7-c0e"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q01-Ef-YF7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="748.79999999999995" y="-321.13943028485761"/>
+        </scene>
+        <!--Discard-->
+        <scene sceneID="zxT-fT-0f2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9oe-gd-8PN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Discard" image="second" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xfQ-B5-HoO">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="Txx-Nn-D1X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="75P-XJ-hAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857" y="376"/>
+        </scene>
+        <!--Deck Bottom-->
+        <scene sceneID="QUL-S2-pw2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="u9G-5R-47H" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Deck Bottom" id="OMP-1s-z3X"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Kz-nG-6Ku">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="re3-hk-tsi" kind="relationship" relationship="rootViewController" id="Xd9-c5-V6R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eDh-y2-7eY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-370" y="1142"/>
         </scene>
     </scenes>
     <resources>
@@ -250,5 +365,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="iwu-Eh-67q"/>
+        <segue reference="QJY-ht-3dO"/>
     </inferredMetricsTieBreakers>
 </document>

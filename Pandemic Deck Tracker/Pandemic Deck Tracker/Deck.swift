@@ -47,9 +47,32 @@ class Deck {
     ]
     
     static let additionalCities = [
-        "Buenos Aires" : 2, "Santiago" : 1, "Lima" : 1, "Bogota" : 2, "Baghdad" : 2, "Tehran" : 1, "Riyadh" : 2,
-        "Delhi" : 1, "New Mumbai" : 2, "Kolkata" : 1, "Chicago" : 2, "Atlanta" : 1, "Mexico City" : 1, "Los Angeles" : 1,
-        "San Francisco" : 2, "Denver" : 2, "Kinshasa" : 1, "Khartoum" : 1, "Dar es Salaam" : 2, "Johannesburg" : 2, "Antananarivo" : 2
+        
+        City(name: "Atlanta", cards: 1),
+        City(name: "Chicago", cards: 2),
+        City(name: "Denver", cards: 2),
+        City(name: "Los Angeles", cards: 1),
+        City(name: "Mexico City", cards: 1),
+        City(name: "San Francisco", cards: 2),
+        
+        City(name: "Bogota", cards: 2),
+        City(name: "Buenos Aires", cards: 2),
+        City(name: "Lima", cards: 1),
+        City(name: "Santiago", cards: 1),
+        
+        City(name: "Antananarivo", cards: 2),
+        City(name: "Dar es Salaam", cards: 2),
+        City(name: "Johannesburg", cards: 2),
+        City(name: "Khartoum", cards: 1),
+        City(name: "Kinshasa", cards: 1),
+        
+        City(name: "Baghdad", cards: 2),
+        City(name: "Delhi", cards: 1),
+        City(name: "Kolkata", cards: 1),
+        City(name: "New Mumbai", cards: 2),
+        City(name: "Riyadh", cards: 2),
+        City(name: "Tehran", cards: 1),
+        
     ]
     
     private init() {
@@ -63,7 +86,7 @@ class Deck {
         } else {
             addStartingCities()
             //TODO: Remove once saving is implemented
-            addAdditionalCities()
+            //addAdditionalCities()
         }
         
         
@@ -119,14 +142,46 @@ class Deck {
         }
     }
     
+    func resetDeck() {
+        for (city, num) in discard {
+            for _ in 0..<num {
+                remove(card: city, from: Deck.Section.Discard.rawValue)
+                add(card: city, to: Deck.Section.Top.rawValue)
+            }
+        }
+        
+        for (city, num) in removed {
+            for _ in 0..<num {
+                remove(card: city, from: Deck.Section.Removed.rawValue)
+                add(card: city, to: Deck.Section.Top.rawValue)
+            }
+        }
+        
+        if sections.count == 1 {
+            return
+        }
+        
+        for i in (1..<sections.count).reversed() {
+            for (city, num) in sections[i] {
+                for _ in 0..<num {
+                    remove(card: city, from: i)
+                    add(card: city, to: Deck.Section.Top.rawValue)
+                }
+            }
+            sections.remove(at: i)
+        }
+    }
+    
     static func sortedCityList(section: [City: Int]) -> [City] {
         return section.keys.sorted()
     }
     
     static func addCity(name: String) {
-        let cityNum = additionalCities[name]
-        if let num = cityNum {
-            shared.addCity(name: name, num: num)
+        let cityIndex = additionalCities.index { (city) -> Bool in
+            city.cityName == name
+        }
+        if let index = cityIndex {
+            shared.addCity(city: additionalCities[index])
         } else if startingCities.contains(name) {
             shared.addCity(name: name, num: 3)
         } else {
@@ -150,8 +205,8 @@ class Deck {
     }
     
     private func addAdditionalCities() {
-        for (key, value) in Deck.additionalCities {
-            addCity(name: key, num: value)
+        for city in Deck.additionalCities {
+            addCity(city: city)
         }
     }
     
